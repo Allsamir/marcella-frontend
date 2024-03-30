@@ -1,0 +1,123 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.bg-g-primary {
+  background: rgb(111, 186, 101);
+  background: linear-gradient(90deg, rgba(111, 186, 101, 1) 0%, rgba(9, 169, 133, 1) 100%);
+}
+
+button.slick-arrow.slick-next {
+  right: 0px;
+  z-index: 100;
+}
+
+button.slick-arrow.slick-prev {
+  left: -5px;
+  z-index: 100;
+}
+
+button.slick-arrow.slick-next::before {
+  content: url('../../public/assets/arrow-right-s-line.png');
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  height: 28px;
+  width: 28px;
+  padding-top: 2px;
+  box-shadow: 0 0 5px #000;
+  opacity: 100;
+}
+
+button.slick-arrow.slick-prev::before {
+  content: url('../../public/assets/arrow-left-s-line.png');
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  height: 28px;
+  width: 28px;
+  padding-top: 2px;
+  box-shadow: 0 0 5px #000;
+  opacity: 100;
+}
+
+/* and drawer  */
+:where(.css-dev-only-do-not-override-1b0bdye).ant-drawer .ant-drawer-body {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+/* quill  */
+.ql-toolbar.ql-snow+.ql-container.ql-snow {
+  height: 10rem;
+}
+
+.seller-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.slick-dots {
+  margin-bottom: 40px;
+}
+
+.slick-dots li {
+  margin: 0px;
+}
+
+.slick-dots li button {
+  padding: 0px;
+}
+
+.slick-dots li button:before {
+  font-size: 10px;
+}
+.slick-dots li.slick-active button:before{
+  color: white;
+}
+
+/* product rating  */
+
+.rate {
+  float: left;
+  height: 46px;
+}
+
+.rate:not(:checked)>input {
+  position: absolute;
+  visibility: hidden;
+}
+
+.rate:not(:checked)>label {
+  float: right;
+  width: 1em;
+  overflow: hidden;
+  white-space: nowrap;
+  cursor: pointer;
+  font-size: 30px;
+  color: #ccc;
+}
+
+.rate:not(:checked)>label:before {
+  content: '★ ';
+}
+
+.rate>input:checked~label {
+  color: #faca15;
+}
+
+.rate:not(:checked)>label:hover,
+.rate:not(:checked)>label:hover~label {
+  color: #faca15;
+}
+
+.rate>input:checked+label:hover,
+.rate>input:checked+label:hover~label,
+.rate>input:checked~label:hover,
+.rate>input:checked~label:hover~label,
+.rate>label:hover~input:checked~label {
+  color: #faca15;
+}
