@@ -1,10 +1,27 @@
+'use client'
 import ProductCard from '@/components/card/ProductCard';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import ProductSlider from '@/utility/productSlider/ProductSlider';
 import { getProductByProductType } from '@/lib/productApi/productApi';
 
-const MensFashion = async ({ type }) => {
-    const data = await getProductByProductType(type);
+const MensFashion = ({ type }) => {
+    const [products, setProducts] = useState(null);
+
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const data = await getProductByProductType(type);
+                if (data) {
+                    setProducts(data)
+                }
+            } catch (error) {
+                console.error(error)
+            }
+        }
+        fetchData()
+    }, [type])
+
 
     return (
         <div>
@@ -12,9 +29,9 @@ const MensFashion = async ({ type }) => {
                 <h1 className='font-medium text-xl md:text-2xl capitalize'>{type}</h1>
                 <div className='mt-6'>
                     {
-                        data?.result?.length > 5 ? <ProductSlider>
+                        products?.result?.length > 5 ? <ProductSlider>
                             {
-                                data?.result?.map(product =>
+                                products?.result?.map(product =>
                                     <div key={product?._id} className='px-1 md:px-2'>
                                         <ProductCard
                                             product={product}
@@ -23,14 +40,13 @@ const MensFashion = async ({ type }) => {
                                 )
                             }
                         </ProductSlider> :
-                            <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5'>
+                            <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4'>
                                 {
-                                    data?.result?.map(product =>
-                                        <div key={product?._id}>
-                                            <ProductCard
-                                                product={product}
-                                            />
-                                        </div>
+                                    products?.result?.map(product =>
+                                        <ProductCard
+                                            key={product?._id}
+                                            product={product}
+                                        />
                                     )
                                 }
                             </div>
