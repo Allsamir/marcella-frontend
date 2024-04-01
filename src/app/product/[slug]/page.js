@@ -7,6 +7,18 @@ import DetailsNavTab from '@/components/productDetails/DetailsNavTab';
 import ProductImage from '@/components/productDetails/ProductImage';
 import { getSingleProduct } from '@/lib/productApi/productApi';
 
+
+export async function generateMetadata({ params }) {
+    const { slug } = params || {};
+    const data = await getSingleProduct(slug);
+    const { name, description } = data?.result || {};
+    return {
+        title: name ? `${name} - Veendeshi` : 'Veendeshi',
+        description: description
+    };
+}
+
+
 const ProductDetailsPage = async ({ params }) => {
     const { slug } = params || {};
     const data = await getSingleProduct(slug);

@@ -15,7 +15,7 @@ const ProductDescription = ({ product }) => {
     const { user } = useContext(AuthContext);
     const { setCartSuccess, setCartDrawerOpen } = useContext(StateContext);
     const [cartLoading, setCartLoading] = useState(false)
-    const { name, categories, numReviews, totalRating, quantity, price, offerPrice, color, size } = product || {};
+    const { name, categories, numReviews, totalRating, quantity, price, offerPrice, color, size, manufacturer } = product || {};
     const [sizePrice, setSizePrice] = useState(null)
 
     const handleQtyIncrement = () => {
@@ -71,7 +71,7 @@ const ProductDescription = ({ product }) => {
             <h1 className='text-lg lg:text-xl font-medium text-dark'>{name}</h1>
             <div className='flex items-center justify-between'>
                 <div>
-                    <p className='mt-2 text-sm lg:text-base'>Brand: No Brands</p>
+                    <p className='mt-2 text-sm lg:text-base'>Brand: {manufacturer?.name ? manufacturer?.name : 'No Brands'}</p>
                     {
                         categories?.map(category =>
                             <p key={category?._id} className='mt-2 text-sm lg:text-base'>Category: {category?.name}</p>

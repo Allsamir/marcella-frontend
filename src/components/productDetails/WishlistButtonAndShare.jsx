@@ -90,13 +90,13 @@ const WishlistButtonAndShare = ({ product }) => {
                 <div className='relative'>
                     <IoMdArrowDropup className='text-4xl absolute bottom-full right-0 text-primary' />
                     <div className='flex items-center gap-4'>
-                        <FacebookShareButton url={`https://marcella-ten.vercel.app${pathname}`}>
+                        <FacebookShareButton url={`https://veendeshi.com${pathname}`}>
                             <FacebookIcon size={32} round={true} />
                         </FacebookShareButton>
-                        <TwitterShareButton url={`https://marcella-ten.vercel.app${pathname}`}>
+                        <TwitterShareButton url={`https://veendeshi.com${pathname}`}>
                             <TwitterIcon size={32} round={true} />
                         </TwitterShareButton>
-                        <WhatsappShareButton url={`https://marcella-ten.vercel.app${pathname}`}>
+                        <WhatsappShareButton url={`https://veendeshi.com${pathname}`}>
                             <WhatsappIcon size={32} round={true} />
                         </WhatsappShareButton>
                     </div>
