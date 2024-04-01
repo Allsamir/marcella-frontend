@@ -16,7 +16,7 @@ const Footer = () => {
                     <div className='md:w-[35%] flex md:block flex-col justify-center items-center'>
                         <span className='uppercase text-white flex items-center font-[500] gap-2'>
                             <Link href="/">
-                                <h1 className="text-4xl md:text-5xl font-semibold uppercase text-secondary">Marcella</h1>
+                                <h1 className="text-3xl md:text-4xl xl:text-5xl font-semibold uppercase text-secondary">VEENDESHI</h1>
                             </Link>
                         </span>
                         <p className='text-white my-5 text-center md:text-start'>Presently, the company efficiently conveys and
@@ -72,7 +72,7 @@ const Footer = () => {
                     </div>
                 </div>
                 <div className='py-5 border-t border-t-white md:flex items-center justify-between'>
-                    <p className='text-white text-center text-sm'>{`© ${new Date().getFullYear()} Copyright Marcella All Rights Reserved.`}</p>
+                    <p className='text-white text-center text-sm'>{`© ${new Date().getFullYear()} Copyright Veendeshi All Rights Reserved.`}</p>
                     <p className='text-white text-sm text-center md:text-end'>Developed By: <Link target='_blank'
                         href="https://www.bengalsoftware.com/" className='text-secondary hover:text-white'>Bengal
                         Software</Link></p>

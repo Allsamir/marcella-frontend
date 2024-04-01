@@ -76,7 +76,7 @@ const Header = () => {
                     {/* top header end */}
                     <div className='flex items-center justify-between'>
                         <Link href='/' className='w-1/4'>
-                            <h1 className='text-3xl lg:text-5xl font-semibold text-white'>MARCELLA</h1>
+                            <h1 className='text-3xl md:text-4xl xl:text-5xl font-semibold text-white'>VEENDESHI</h1>
                         </Link>
                         <div className='w-2/4 hidden lg:flex items-center justify-center'>
                             <SearchBar />

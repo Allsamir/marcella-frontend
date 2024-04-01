@@ -24,7 +24,7 @@ const BarCodeInvoice = ({ singleOrder }) => {
     return (
         <div className='border border-black w-1/2 mt-10'>
             <div className='grid grid-cols-3'>
-                <h1 className='uppercase text-primary text-3xl font-semibold border-r border-r-black p-1 text-center w-full'>Marcella</h1>
+                <h1 className='uppercase text-primary text-3xl font-semibold border-r border-r-black p-1 text-center w-full'>Veendeshi</h1>
                 <div className='border-r border-r-black p-1'>
                     <p className='text-[10px] text-center text-black'>Order Id</p>
                     <p className='text-center text-black text-xs'>{orderId}</p>
