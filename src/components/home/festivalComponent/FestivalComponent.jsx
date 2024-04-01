@@ -23,7 +23,7 @@ const FestivalComponent = ({ offerType, fesTitle, fesColor, offerDate, endDate }
         fetchData()
     }, [offerType])
 
-    
+
     return (
         <div className='bg-white rounded-xl shadow mb-6'>
             <div className='flex items-center justify-between md:pr-5'>
@@ -53,17 +53,30 @@ const FestivalComponent = ({ offerType, fesTitle, fesColor, offerDate, endDate }
 
 
             <div className={`px-2 md:px-5 py-5 rounded-b-xl`} style={{ backgroundColor: fesColor }}>
-                <ProductSlider>
-                    {
-                        flashProduct?.result?.data?.map(product =>
-                            <div key={product?._id} className='px-1 md:px-2'>
-                                <ProductCard
-                                    product={product}
-                                />
-                            </div>
-                        )
-                    }
-                </ProductSlider>
+                {
+                    flashProduct?.result?.data?.length > 5 ?
+                        <ProductSlider>
+                            {
+                                flashProduct?.result?.data?.map(product =>
+                                    <div key={product?._id} className='px-1 md:px-2'>
+                                        <ProductCard
+                                            product={product}
+                                        />
+                                    </div>
+                                )
+                            }
+                        </ProductSlider> :
+                        <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2 md:gap-4'>
+                            {
+                                flashProduct?.result?.data?.map(product =>
+                                    <ProductCard
+                                        key={product?._id}
+                                        product={product}
+                                    />
+                                )
+                            }
+                        </div>
+                }
             </div>
         </div>
     );
