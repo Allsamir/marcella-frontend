@@ -14,7 +14,7 @@ const TopBrands = async () => {
                 {
                     data?.result?.map(brand =>
                         <Link href={`/products?brand=${brand?.slug}`} key={brand?._id} className='bg-white rounded-lg shadow-md cursor-pointer px-8 md:px-14 py-4 md:py-6 group flex flex-col items-center justify-center'>
-                            <Image quality={100} width={500} height={500} src={brand?.image} className='w-full' alt='brand' />
+                            <Image quality={100} width={500} height={500} src={brand?.image === 'undefined' ? 'https://i.ibb.co/X5cKJdM/brand-removebg-preview.png' : brand?.image} className='w-full' alt='brand' />
                             <h1 className='text-center text-xs md:sm group-hover:text-primary mt-2'>{brand?.name}</h1>
                         </Link>
                     )
