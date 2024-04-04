@@ -13,8 +13,8 @@ export async function generateMetadata({ params }) {
     const data = await getSingleProduct(slug);
     const { name, description } = data?.result || {};
     return {
-        title: name ? `${name} - Veendeshi` : 'Veendeshi',
-        description: description
+        title: name ? `${name}` : 'Veendeshi',
+        description: name
     };
 }
 
