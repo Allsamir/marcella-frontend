@@ -90,13 +90,13 @@ const WishlistButtonAndShare = ({ product }) => {
                 <div className='relative'>
                     <IoMdArrowDropup className='text-4xl absolute bottom-full right-0 text-primary' />
                     <div className='flex items-center gap-4'>
-                        <FacebookShareButton url={`https://veendeshi.com${pathname}`}>
+                        <FacebookShareButton url={`https://veendeshi.com${pathname}`} imageUrl={product?.images?.[0]}>
                             <FacebookIcon size={32} round={true} />
                         </FacebookShareButton>
-                        <TwitterShareButton url={`https://veendeshi.com${pathname}`}>
+                        <TwitterShareButton url={`https://veendeshi.com${pathname}`} imageUrl={product?.images?.[0]}>
                             <TwitterIcon size={32} round={true} />
                         </TwitterShareButton>
-                        <WhatsappShareButton url={`https://veendeshi.com${pathname}`}>
+                        <WhatsappShareButton url={`https://veendeshi.com${pathname}`} imageUrl={product?.images?.[0]}>
                             <WhatsappIcon size={32} round={true} />
                         </WhatsappShareButton>
                     </div>
