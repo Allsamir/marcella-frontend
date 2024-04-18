@@ -65,18 +65,19 @@ const OneBannerForm = ({ activeButton }) => {
 
 
     const handleSubmit = async (event) => {
-        event.preventDefault()
+        event.preventDefault();
 
-        const formData = new FormData()
-        if (selectedProduct) formData.append('products', selectedProduct)
-        if (imgRef.current) formData.append('images', imgRef.current.files[0])
+        const formData = new FormData(); // Initialize formData here
 
-        const data = await createStoreLayoutWithProduct(seller?.data?.user?.email, formData)
+        if (selectedProduct) formData.append('products', selectedProduct);
+        if (imgRef.current) formData.append('images', imgRef.current.files[0]);
+
+        const data = await createStoreLayoutWithProduct(seller?.data?.user?.email, formData);
         if (data) {
-            toast.success('Success')
+            toast.success('Success');
         }
+    };
 
-    }
 
 
     return (
