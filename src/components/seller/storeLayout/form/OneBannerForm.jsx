@@ -87,7 +87,7 @@ const OneBannerForm = ({ activeButton }) => {
                 <div className='grid grid-cols-1 gap-2'>
                     <div>
                         <label className='text-lg'>Image <span className='text-red-500'>*</span></label>
-                        <input className='border border-gray-300 mt-2 outline-none p-1.5 placeholder:text-sm rounded-md w-full block' placeholder='Image' ref={imgRef} name='image' type="file" />
+                        <input multiple={activeButton === 'two' || activeButton === 'three'} className='border border-gray-300 mt-2 outline-none p-1.5 placeholder:text-sm rounded-md w-full block' placeholder='Image' ref={imgRef} name='image' type="file" />
                     </div>
                     <div className='mt-5'>
                         <label className='text-lg'>Products <span className='text-red-500'>*</span></label>
