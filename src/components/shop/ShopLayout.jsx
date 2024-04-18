@@ -5,7 +5,7 @@ import { AuthContext } from '@/context/authProvider/AuthProvider';
 import Layout1 from './shopLayout/Layout1';
 import Layout2 from './shopLayout/Layout2';
 import { StateContext } from '@/context/stateProvider/StateProvider';
-import { getSingleSellerById } from '@/lib/sellerApi/sellerApi';
+import { getSingleSeller, getSingleSellerById } from '@/lib/sellerApi/sellerApi';
 import Layout3 from './shopLayout/Layout3';
 import Preloader from '@/utility/preloader/Preloader';
 
@@ -64,6 +64,11 @@ const ShopLayout = ({ slug }) => {
                     if (res) {
                         setSellerInfo(res)
                     }
+                } else {
+                    const res = await getSingleSeller(seller?.data?.user?.email);
+                    if (res?.data) {
+                        setSellerInfo(res);
+                    }
                 }
             } catch (error) {
                 console.error(error)
@@ -79,12 +84,21 @@ const ShopLayout = ({ slug }) => {
             {layoutLoader ? <div className='min-h-screen'> <Preloader /></div> :
                 selectedLayout?.data?.map(layout => {
                     if (layout?.selected === 1) {
-                        return <Layout1 email={sellerInfo?.data?.email} key={layout?.selected} />
+                        return <Layout1
+                            id={sellerInfo?.data?._id}
+                            email={sellerInfo?.data?.email}
+                            key={layout?.selected} />
                     } else if (layout?.selected === 2) {
-                        return <Layout2 email={sellerInfo?.data?.email} key={layout?.selected} />
+                        return <Layout2
+                            id={sellerInfo?.data?._id}
+                            email={sellerInfo?.data?.email}
+                            key={layout?.selected} />
                     }
                     else if (layout?.selected === 3) {
-                        return <Layout3 email={sellerInfo?.data?.email} key={layout?.selected} />
+                        return <Layout3
+                            id={sellerInfo?.data?._id}
+                            email={sellerInfo?.data?.email}
+                            key={layout?.selected} />
                     }
                     return null;
                 })

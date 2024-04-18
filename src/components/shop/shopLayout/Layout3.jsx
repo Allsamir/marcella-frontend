@@ -6,7 +6,7 @@ import SellerShopIndex from '..';
 import { getStoreLayoutQuery } from '@/lib/layoutStore/layoutStoreApi';
 import ProductSlider from '@/utility/productSlider/ProductSlider';
 
-const Layout3 = ({ email }) => {
+const Layout3 = ({ email, id }) => {
     const [layouts, setLayouts] = useState(null);
 
     useEffect(() => {
@@ -173,7 +173,7 @@ const Layout3 = ({ email }) => {
                     </div>
                 )
             }
-            <SellerShopIndex />
+             <SellerShopIndex id={id} />
         </div>
     );
 };

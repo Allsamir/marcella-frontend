@@ -5,7 +5,7 @@ import SellerShopIndex from '..';
 import { getStoreLayoutQuery } from '@/lib/layoutStore/layoutStoreApi';
 
 
-const Layout1 = ({ email }) => {
+const Layout1 = ({ email, id }) => {
     const [layouts, setLayouts] = useState(null);
 
     useEffect(() => {
@@ -22,7 +22,7 @@ const Layout1 = ({ email }) => {
         fetchData()
     }, [email])
     const products = layouts?.data?.filter(layout => layout?.images?.length <= 1)
-
+    console.log(id)
     return (
         <div>
             {
@@ -34,7 +34,7 @@ const Layout1 = ({ email }) => {
                     />
                 )
             }
-            <SellerShopIndex />
+            <SellerShopIndex id={id} />
         </div>
     );
 };
