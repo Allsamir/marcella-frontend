@@ -5,13 +5,13 @@ import SellerShopIndex from '..';
 import { getStoreLayoutQuery } from '@/lib/layoutStore/layoutStoreApi';
 
 
-const Layout1 = () => {
+const Layout1 = ({ email }) => {
     const [layouts, setLayouts] = useState(null);
 
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const res = await getStoreLayoutQuery('panda@gmail.com')
+                const res = await getStoreLayoutQuery(email)
                 if (res) {
                     setLayouts(res)
                 }
@@ -20,9 +20,9 @@ const Layout1 = () => {
             }
         }
         fetchData()
-    }, [])
+    }, [email])
     const products = layouts?.data?.filter(layout => layout?.images?.length <= 1)
-    
+
     return (
         <div>
             {

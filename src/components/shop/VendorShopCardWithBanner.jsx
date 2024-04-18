@@ -21,17 +21,18 @@ const VendorShopCardWithBanner = ({ banner, products }) => {
             }
 
             {
-                products?.length > 5 ? <ProductSlider>
-                    {
-                        products?.result?.map(product =>
-                            <div key={product?._id} className='px-1 md:px-2'>
-                                <ProductCard
-                                    product={product}
-                                />
-                            </div>
-                        )
-                    }
-                </ProductSlider> :
+                products?.length > 5 ?
+                    <ProductSlider>
+                        {
+                            products?.map(product =>
+                                <div key={product?._id} className='px-1 md:px-2'>
+                                    <ProductCard
+                                        product={product}
+                                    />
+                                </div>
+                            )
+                        }
+                    </ProductSlider> :
                     <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2 md:gap-4'>
                         {
                             products?.map(product =>

@@ -79,12 +79,12 @@ const ShopLayout = ({ slug }) => {
             {layoutLoader ? <div className='min-h-screen'> <Preloader /></div> :
                 selectedLayout?.data?.map(layout => {
                     if (layout?.selected === 1) {
-                        return <Layout1 key={layout?.selected} />
+                        return <Layout1 email={sellerInfo?.data?.email} key={layout?.selected} />
                     } else if (layout?.selected === 2) {
-                        return <Layout2 key={layout?.selected} />
+                        return <Layout2 email={sellerInfo?.data?.email} key={layout?.selected} />
                     }
                     else if (layout?.selected === 3) {
-                        return <Layout3 key={layout?.selected} />
+                        return <Layout3 email={sellerInfo?.data?.email} key={layout?.selected} />
                     }
                     return null;
                 })
