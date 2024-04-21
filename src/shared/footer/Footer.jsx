@@ -1,8 +1,6 @@
 import React from 'react';
-import { FaLocationArrow, FaRegEnvelopeOpen } from "react-icons/fa";
+import { FaFacebookSquare, FaInstagramSquare, FaLinkedin, FaRegEnvelopeOpen, FaTwitterSquare } from "react-icons/fa";
 import { FaPhoneAlt } from "react-icons/fa";
-import appStore from '../../../public/assets/app.png';
-import playStore from '../../../public/assets/googleplay.png';
 import paymentsLogo from '../../../public/assets/payments.png'
 import Link from 'next/link';
 import Image from 'next/image';
@@ -33,7 +31,7 @@ const Footer = () => {
                         </span>
                         <span className="flex text-white items-center gap-4 mt-2">
                             <FaPhoneAlt />
-                            <p>01894-961361</p>
+                            <a href="tel:+8801894961361">+8801894-961361</a>
                         </span>
                     </div>
 
@@ -61,21 +59,31 @@ const Footer = () => {
                     </div>
 
                     <div className='md:w-[30%]'>
-                        <h1 className='text-white text-center md:text-start mt-12'>Download our mobile app</h1>
-
-                        <div className='flex items-center justify-center md:justify-start gap-4 mt-8'>
-                            <Image quality={100} placeholder='blur' src={playStore} alt="playstore" />
-                            <Image quality={100} placeholder='blur' src={appStore} alt="appstore" />
-                        </div>
-
+                        <h1 className='text-white text-center md:text-start mt-12'>We Accept</h1>
                         <Image quality={100} placeholder='blur' className='mt-8' src={paymentsLogo} alt="payments" />
                     </div>
                 </div>
                 <div className='py-5 border-t border-t-white md:flex items-center justify-between'>
-                    <p className='text-white text-center text-sm'>{`© ${new Date().getFullYear()} Copyright Veendeshi All Rights Reserved.`}</p>
-                    <p className='text-white text-sm text-center md:text-end'>Developed By: <Link target='_blank'
-                        href="https://www.bengalsoftware.com/" className='text-secondary hover:text-white'>Bengal
-                        Software</Link></p>
+                    <div className='flex items-center justify-center mb-4 md:mb-0 gap-x-2'>
+                        <Link href='https://www.facebook.com/' target='_blank'>
+                            <FaFacebookSquare className='text-3xl text-[#222222] bg-[#6d6d6d] border border-white rounded cursor-pointer' />
+                        </Link>
+                        <Link href='https://linkedin.com/' target='_blank'>
+                            <FaLinkedin className='text-3xl text-[#222222] bg-[#6d6d6d] border border-white rounded cursor-pointer' />
+                        </Link>
+                        <Link href='https://twitter.com/' target='_blank'>
+                            <FaTwitterSquare className='text-3xl text-[#222222] bg-[#6d6d6d] border border-white rounded cursor-pointer' />
+                        </Link>
+                        <Link href='https://www.instagram.com/' target='_blank'>
+                            <FaInstagramSquare className='text-3xl text-[#222222] bg-[#6d6d6d] border border-white rounded cursor-pointer' />
+                        </Link>
+                    </div>
+                    <div>
+                        <p className='text-white text-center text-sm'>{`© ${new Date().getFullYear()} Copyright Veendeshi All Rights Reserved.`}</p>
+                        <p className='text-white text-xs text-center md:text-end'>Developed By: <Link target='_blank'
+                            href="https://www.bengalsoftware.com/" className='text-secondary hover:text-white'>Bengal
+                            Software</Link></p>
+                    </div>
                 </div>
             </div>
         </div>

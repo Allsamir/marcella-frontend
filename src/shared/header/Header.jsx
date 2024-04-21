@@ -49,7 +49,7 @@ const Header = () => {
                         <div className='flex items-center justify-end gap-5 text-white mb-5 text-sm'>
                             <Link href='/' className='text-white text-sm border-r border-green-700 pr-4'>Customer Service  </Link>
                             <Link href='' className='border-r pr-4 border-green-700'>Our Address</Link>
-                            <p>Call Us On +8801894-961361</p>
+                            <p>Call Us On <a href="tel:+8801894961361">+8801894-961361</a></p>
                         </div>
                         <div className='flex items-center justify-end gap-5 text-white mb-5 text-sm'>
                             {
