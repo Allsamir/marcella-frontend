@@ -1,6 +1,7 @@
 'use client'
 import React, { useState } from 'react';
 import Image from 'next/image';
+import DetailsImageSlider from '@/utility/detailsImageSlider/DetailsImageSlider';
 // import ReactImageMagnify from 'react-image-magnify';
 
 
@@ -25,24 +26,43 @@ const ProductImage = ({ dImages }) => {
 
             </div>
 
-            <div className='flex items-center gap-2 w-full overflow-x-scroll seller-scrollbar'>
-                {
-                    dImages?.map((img, idx) =>
-                        <div key={img}>
-                            <Image
-                                onMouseOver={() => setSelectedImage(idx)}
-                                width={100}
-                                height={100}
-                                className={`w-16 mt-4 border rounded-md cursor-pointer ${selectedImage === idx ? 'border border-primary' : ''}`}
-                                quality={100}
-                                src={img}
-                                alt='detail'
-                            />
-                        </div>
-                    )
-                }
+            {dImages?.length <= 5 ?
+                <div className='flex items-center gap-2 w-full overflow-x-scroll seller-scrollbar'>
+                    {
+                        dImages?.map((img, idx) =>
+                            <div key={img}>
+                                <Image
+                                    onMouseOver={() => setSelectedImage(idx)}
+                                    width={100}
+                                    height={100}
+                                    className={`w-16 mt-4 border rounded-md cursor-pointer ${selectedImage === idx ? 'border border-primary' : ''}`}
+                                    quality={100}
+                                    src={img}
+                                    alt='detail'
+                                />
+                            </div>
+                        )
+                    }
 
-            </div>
+                </div> :
+                <DetailsImageSlider>
+                    {
+                        dImages?.map((img, idx) =>
+                            <div key={img} className='px-1'>
+                                <Image
+                                    onMouseOver={() => setSelectedImage(idx)}
+                                    width={100}
+                                    height={100}
+                                    className={`w-16 mt-4 border rounded-md cursor-pointer ${selectedImage === idx ? 'border border-primary' : ''}`}
+                                    quality={100}
+                                    src={img}
+                                    alt='detail'
+                                />
+                            </div>
+                        )
+                    }
+                </DetailsImageSlider>
+            }
         </div>
     );
 };
