@@ -43,7 +43,7 @@ const Banner = () => {
                                             src={ban?.image}
                                             alt={ban?.name}
                                             quality={100}
-                                            className='h-fit md:h-[19rem] xl:h-[22rem] w-full rounded-md lg:rounded-l-none xl:rounded-r-lg'
+                                            className='h-fit md:h-[20.5rem] xl:h-[23.75rem] w-full rounded-md lg:rounded-l-none xl:rounded-r-lg'
                                         />
                                     </Link>
                                 )
