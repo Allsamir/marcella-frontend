@@ -27,7 +27,7 @@ const Footer = () => {
                         </span>
                         <span className="flex text-white items-center gap-4 mt-2">
                             <FaRegEnvelopeOpen />
-                            <p>example@gmail.com</p>
+                            <p>info@veendeshi.com</p>
                         </span>
                         <span className="flex text-white items-center gap-4 mt-2">
                             <FaPhoneAlt />
@@ -39,21 +39,19 @@ const Footer = () => {
                         <div className='w-full md:w-1/2'>
                             <h2 className='text-white text-xl font-medium'>Information</h2>
                             <ul className='text-white mt-5 text-sm md:text-base'>
-                                <li><Link className='hover:text-secondary' href=''>Terms & Condition</Link></li>
-                                <li><Link className='hover:text-secondary' href=''>FAQ</Link></li>
-                                <li><Link className='hover:text-secondary' href=''>Refund Policy</Link></li>
-                                <li><Link className='hover:text-secondary' href=''>Seller Promises</Link></li>
-                                <li><Link className='hover:text-secondary' href=''>Help center</Link></li>
+                                <li><Link className='hover:text-secondary hover:underline' href='/terms-condition'>Terms & Condition</Link></li>
+                                <li><Link className='hover:text-secondary hover:underline' href='/delivery-info'>Delivery Info</Link></li>
+                                <li><Link className='hover:text-secondary hover:underline' href='/return-refund'>Refund Policy</Link></li>
+                                <li><Link className='hover:text-secondary hover:underline' href='/privacy-policy'>Privacy Policy</Link></li>
+                                <li><Link className='hover:text-secondary hover:underline' href='/store-location'>Store Location</Link></li>
                             </ul>
                         </div>
                         <div className='w-full md:w-1/2 ml-10 md:ml-0'>
-                            <h2 className='text-white text-xl font-medium'>Services</h2>
+                            <h2 className='text-white text-xl font-medium'>Account</h2>
                             <ul className='text-white mt-5 text-sm md:text-base'>
-                                <li><Link className='hover:text-secondary' href=''>Payment Method</Link></li>
-                                <li><Link className='hover:text-secondary' href=''>Contact Us</Link></li>
-                                <li><Link className='hover:text-secondary' href=''>About Us</Link></li>
-                                <li><Link className='hover:text-secondary' href=''>Shipping Policy</Link></li>
-                                <li><Link className='hover:text-secondary' href=''>Account</Link></li>
+                                <li><Link className='hover:text-secondary' href='/seller-signup'>Become a Seller</Link></li>
+                                <li><Link className='hover:text-secondary' href='/login'>Account</Link></li>
+                                <li><Link className='hover:text-secondary' href='/contact'>Contact Us</Link></li>
                             </ul>
                         </div>
                     </div>
