@@ -35,14 +35,11 @@ const getSingleSellerById = async (id) => {
 
 
 // update single seller by seller id 
-const updateSellerMutation = async (id, data) => {
+const updateSellerMutation = async (id, formData) => {
     try {
         const res = await fetch(`${baseUrl}/auth/seller/${id}`, {
-            headers: {
-                'Content-Type': 'application/json',
-            },
             method: 'PUT',
-            body: JSON.stringify(data)
+            body: formData
         })
 
         if (!res.ok) {
