@@ -58,7 +58,7 @@ const Layout2 = ({ email, id }) => {
                                         )
                                     }
                                 </ProductSlider> :
-                                <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2 md:gap-4'>
+                                <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2'>
                                     {
                                         product?.products?.map(product =>
                                             <ProductCard

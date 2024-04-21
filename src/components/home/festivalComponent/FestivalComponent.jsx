@@ -78,7 +78,7 @@ const FestivalComponent = ({ offerType, fesTitle, fesColor, offerDate, endDate }
                                             )
                                         }
                                     </ProductSlider> :
-                                    <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2 md:gap-4'>
+                                    <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2'>
                                         {
                                             flashProduct?.result?.data?.map(product =>
                                                 <ProductCard
