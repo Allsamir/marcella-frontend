@@ -4,7 +4,7 @@ import cover from '../../../public/assets/cover.webp'
 import avatar from '../../../public/assets/sellerlogo.jpg'
 
 const ShopHeader = ({ sellerInfo }) => {
-    // const { name, coverUrl, profileUrl } = sellerInfo?.data || {};
+    const { name, coverUrl, profileUrl } = sellerInfo?.data || {};
     // console.log(sellerInfo)
     return (
         <div className='relative'>

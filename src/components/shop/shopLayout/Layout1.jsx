@@ -30,6 +30,7 @@ const Layout1 = ({ email, id }) => {
                     <VendorShopCardWithBanner
                         key={idx}
                         banner={product?.images}
+                        id={id}
                         products={product?.products}
                     />
                 )

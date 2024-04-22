@@ -49,7 +49,7 @@ const Layout2 = ({ email, id }) => {
                             products?.length > 5 ?
                                 <ProductSlider>
                                     {
-                                        product?.products?.map(product =>
+                                        product?.products?.map(product => product?.sellerId === id &&
                                             <div key={product?._id} className='px-1 md:px-2'>
                                                 <ProductCard
                                                     product={product}
@@ -60,7 +60,7 @@ const Layout2 = ({ email, id }) => {
                                 </ProductSlider> :
                                 <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2'>
                                     {
-                                        product?.products?.map(product =>
+                                        product?.products?.map(product => product?.sellerId === id &&
                                             <ProductCard
                                                 key={product?._id}
                                                 product={product}
