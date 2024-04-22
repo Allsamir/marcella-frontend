@@ -6,6 +6,7 @@ import { getSingleSeller } from '@/lib/sellerApi/sellerApi';
 import { Select } from 'antd';
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import toast from 'react-hot-toast';
+import StoreLayoutTable from '../table/StoreLayoutTable';
 
 const OneBannerForm = ({ activeButton }) => {
     const imgRef = useRef();
@@ -108,6 +109,9 @@ const OneBannerForm = ({ activeButton }) => {
                     <button type='submit' className='text-white font-medium bg-primary px-6 py-2 rounded hover:bg-dark ease-in-out duration-500'>{'Submit'}</button>
                 </div>
             </form>
+            <StoreLayoutTable
+                email={seller?.data?.user?.email}
+            />
         </div>
     );
 };

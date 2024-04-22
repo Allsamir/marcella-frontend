@@ -22,7 +22,7 @@ const Layout1 = ({ email, id }) => {
         fetchData()
     }, [email])
     const products = layouts?.data?.filter(layout => layout?.images?.length <= 1)
-    console.log(id)
+
     return (
         <div>
             {
