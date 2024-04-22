@@ -39,7 +39,10 @@ const updateSellerMutation = async (id, formData) => {
     try {
         const res = await fetch(`${baseUrl}/auth/seller/${id}`, {
             method: 'PUT',
-            body: formData
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formData)
         })
 
         if (!res.ok) {
