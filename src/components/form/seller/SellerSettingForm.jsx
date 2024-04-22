@@ -103,7 +103,7 @@ const SellerSettingForm = () => {
                 </div>
                 <div className='mb-4'>
                     <label className='text-dark text-sm'>Address <span className='text-red-500'>*</span></label>
-                    <textarea onChange={handleChange} name='address' defaultValue={address} className="border mt-2 border-gray-300 outline-none p-2 w-full block rounded-md placeholder:text-sm placeholder:font-light" id="" placeholder='Meta Description' cols="4" rows="3"></textarea>
+                    <textarea onChange={handleChange} name='address' defaultValue={address} className="border mt-2 border-gray-300 outline-none p-2 w-full block rounded-md placeholder:text-sm placeholder:font-light" id="" placeholder='Address' cols="4" rows="3"></textarea>
                 </div>
                 <div className='mb-4'>
                     <label className='text-dark text-sm'>Meta Title</label>
