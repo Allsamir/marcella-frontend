@@ -1,5 +1,4 @@
 import React from 'react';
-import img from '../../../../public/assets/category.jpg'
 import Image from 'next/image';
 import Link from 'next/link';
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";

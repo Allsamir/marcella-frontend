@@ -5,6 +5,7 @@ import paymentsLogo from '../../../public/assets/payments.png'
 import Link from 'next/link';
 import Image from 'next/image';
 import { FaLocationDot } from 'react-icons/fa6';
+import logo from '../../../public/assets/logo.png'
 
 const Footer = () => {
     return (
@@ -14,7 +15,7 @@ const Footer = () => {
                     <div className='md:w-[35%] flex md:block flex-col justify-center items-center'>
                         <span className='uppercase text-white flex items-center font-[500] gap-2'>
                             <Link href="/">
-                                <h1 className="text-3xl md:text-4xl xl:text-5xl font-semibold uppercase text-secondary">VEENDESHI</h1>
+                                <Image src={logo} quality={100} placeholder='blur' className='md:w-3/4' alt='veendeshi' />
                             </Link>
                         </span>
                         <p className='text-white my-5 text-center md:text-start'>Presently, the company efficiently conveys and
@@ -31,7 +32,7 @@ const Footer = () => {
                         </span>
                         <span className="flex text-white items-center gap-4 mt-2">
                             <FaPhoneAlt />
-                            <a href="tel:+8801894961361">+8801894-961361</a>
+                            <a href="tel:+8801894-961377">+8801894-961377</a>
                         </span>
                     </div>
 
