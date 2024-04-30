@@ -15,7 +15,7 @@ const Footer = () => {
                     <div className='md:w-[35%] flex md:block flex-col justify-center items-center'>
                         <span className='uppercase text-white flex items-center font-[500] gap-2'>
                             <Link href="/">
-                                <Image src={logo} quality={100} placeholder='blur' className='md:w-3/4' alt='veendeshi' />
+                                <Image src={logo} quality={100} className='md:w-3/4' alt='veendeshi' />
                             </Link>
                         </span>
                         <p className='text-white my-5 text-center md:text-start'>Presently, the company efficiently conveys and

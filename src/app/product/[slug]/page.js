@@ -11,10 +11,18 @@ import { getSingleProduct } from '@/lib/productApi/productApi';
 export async function generateMetadata({ params }) {
     const { slug } = params || {};
     const data = await getSingleProduct(slug);
-    const { name, description } = data?.result || {};
+
+    const { name, description, images } = data?.result || {};
+
     return {
         title: name ? `${name}` : 'Veendeshi',
-        description: name
+        description: description,
+        openGraph: {
+            title: name ? `${name}` : 'Veendeshi',
+            description: name,
+            url: `https://veendeshi.com/product/${slug}`,
+            image: images?.[0]
+        },
     };
 }
 

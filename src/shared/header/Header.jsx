@@ -77,7 +77,7 @@ const Header = () => {
                     {/* top header end */}
                     <div className='flex items-center justify-between'>
                         <Link href='/' className='md:w-1/4 w-1/2'>
-                            <Image src={logo} quality={100} placeholder='blur' className='md:w-3/4' alt='veendeshi' />
+                            <Image src={logo} quality={100} className='md:w-3/4' alt='veendeshi' />
                         </Link>
                         <div className='w-2/4 hidden lg:flex items-center justify-center'>
                             <SearchBar />
