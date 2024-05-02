@@ -15,7 +15,7 @@ const ProductDescription = ({ product }) => {
     const { user } = useContext(AuthContext);
     const { setCartSuccess, setCartDrawerOpen } = useContext(StateContext);
     const [cartLoading, setCartLoading] = useState(false)
-    const { name, categories, numReviews, totalRating, quantity, price, offerPrice, color, size, manufacturer } = product || {};
+    const { name, categories, numReviews, totalRating, quantity, price, offerPrice, color, size, manufacturer, status } = product || {};
     const [sizePrice, setSizePrice] = useState(null)
 
     const handleQtyIncrement = () => {
@@ -65,7 +65,7 @@ const ProductDescription = ({ product }) => {
             setCartLoading(false)
         }
     }
-
+    console.log(product)
     return (
         <div>
             <h1 className='text-lg lg:text-xl font-medium text-dark'>{name}</h1>
@@ -104,7 +104,8 @@ const ProductDescription = ({ product }) => {
                 <p>Size: </p>
                 {
                     size?.map(sz =>
-                        <button onClick={() => setSizePrice(parseFloat(sz?.name))} key={sz?._id} className={`text-sm text-dark px-2 ${sizePrice === parseFloat(sz?.name) ? 'border border-primary' : ''}`}>{sz?.name}</button>
+                        <button key={sz?._id} className={`text-sm text-dark px-2 ${sizePrice === parseFloat(sz?.name) ? 'border border-primary' : ''}`}>{sz?.name}</button>
+                        // <button onClick={() => setSizePrice(parseFloat(sz?.name))} key={sz?._id} className={`text-sm text-dark px-2 ${sizePrice === parseFloat(sz?.name) ? 'border border-primary' : ''}`}>{sz?.name}</button>
                     )
                 }
             </div>
@@ -124,7 +125,7 @@ const ProductDescription = ({ product }) => {
 
             <div className='flex items-center gap-x-20 mt-4'>
                 <button onClick={handelAddToCart} className='bg-primary text-white px-10 lg:px-16 py-2 lg:py-3 rounded-md hover:bg-dark ease-in-out duration-500'>{cartLoading ? 'Loading..' : 'Add to Cart'}</button>
-                <p className='text-sm font-light'>Stock: {quantity}</p>
+                <p className='text-sm font-light'>{(status === 'IN-STOCK') ? `Stock: ${quantity}` : status}</p>
             </div>
         </div>
     );
