@@ -123,7 +123,7 @@ const ProductDescription = ({ product }) => {
                 </div>
             </div>
 
-            <div className='flex items-center gap-x-20 mt-4'>
+            <div className='flex items-center justify-between md:gap-x-20 mt-4'>
                 <button onClick={handelAddToCart} className='bg-primary text-white px-10 lg:px-16 py-2 lg:py-3 rounded-md hover:bg-dark ease-in-out duration-500'>{cartLoading ? 'Loading..' : 'Add to Cart'}</button>
                 <p className='text-sm font-light'>{(status === 'IN-STOCK') ? `Stock: ${quantity}` : status}</p>
             </div>
