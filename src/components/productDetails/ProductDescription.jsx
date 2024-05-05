@@ -17,6 +17,8 @@ const ProductDescription = ({ product }) => {
     const [cartLoading, setCartLoading] = useState(false)
     const { name, categories, numReviews, totalRating, quantity, price, offerPrice, color, size, manufacturer, status } = product || {};
     const [sizePrice, setSizePrice] = useState(null)
+    const [selectedColor, setSelectedColor] = useState(null);
+    const [selectedSize, setSelectedSize] = useState(null)
 
     const handleQtyIncrement = () => {
         const newQty = productQty + 1;
@@ -46,7 +48,9 @@ const ProductDescription = ({ product }) => {
                 product: product?._id,
                 sellerId: product?.sellerId,
                 offerPrice: product?.offerPrice,
-                quantity: productQty
+                quantity: productQty,
+                color: selectedColor,
+                size: selectedSize
             };
         } else {
             toast.error('Please Signin Your Account')
@@ -65,7 +69,7 @@ const ProductDescription = ({ product }) => {
             setCartLoading(false)
         }
     }
-    console.log(product)
+    
     return (
         <div>
             <h1 className='text-lg lg:text-xl font-medium text-dark'>{name}</h1>
@@ -95,7 +99,7 @@ const ProductDescription = ({ product }) => {
                 <p>Color: </p>
                 {
                     color?.map(col =>
-                        <button key={col?._id} className='h-5 w-5 rounded-full' style={{ backgroundColor: col?._id?.colorCode }}></button>
+                        <button onClick={() => setSelectedColor(col?._id?.name)} key={col?._id} className={`h-5 w-5 rounded-full ${selectedColor === col?._id?.name ? 'border border-black' : ''}`} style={{ backgroundColor: col?._id?.colorCode }}></button>
                     )
                 }
             </div>
@@ -104,7 +108,7 @@ const ProductDescription = ({ product }) => {
                 <p>Size: </p>
                 {
                     size?.map(sz =>
-                        <button key={sz?._id} className={`text-sm text-dark px-2 ${sizePrice === parseFloat(sz?.name) ? 'border border-primary' : ''}`}>{sz?.name}</button>
+                        <button onClick={() => setSelectedSize(sz?.name)} key={sz?._id} className={`text-sm text-dark px-2 ${selectedSize === sz?.name ? 'border border-black' : ''}`}>{sz?.name}</button>
                         // <button onClick={() => setSizePrice(parseFloat(sz?.name))} key={sz?._id} className={`text-sm text-dark px-2 ${sizePrice === parseFloat(sz?.name) ? 'border border-primary' : ''}`}>{sz?.name}</button>
                     )
                 }
