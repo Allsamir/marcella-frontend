@@ -79,10 +79,7 @@ const WishlistButtonAndShare = ({ product }) => {
                     <IoShareSocial />
                 </button>
                 <button onClick={handleAddToWishlist} className='text-3xl'>
-
-                    {isExist ? <FaHeart className='text-red-500' /> : <FaRegHeart className='text-gray-400' />
-
-                    }
+                    {isExist ? <FaHeart className='text-red-500' /> : <FaRegHeart className='text-gray-400' />}
                 </button>
             </div>
 
