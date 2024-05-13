@@ -32,7 +32,7 @@ const MensFashion = ({ type }) => {
                         products?.result?.length > 5 ? <ProductSlider>
                             {
                                 products?.result?.map(product =>
-                                    <div key={product?._id} className='px-1 md:px-2'>
+                                    <div key={product?._id} className='px-1 py-2'>
                                         <ProductCard
                                             product={product}
                                         />
