@@ -88,7 +88,7 @@ const Header = () => {
                                     (user?.data?.user?.email || userLoginSuccess) ?
                                         <Link href='/wishlist' className='bg-white text-xl rounded-full p-1.5 relative'>
                                             {wishProducts?.length > 0 ? <FaHeart className='text-red-500' /> : <CiHeart />}
-                                            <p className='absolute -top-1 -right-1 bg-green-600 text-white rounded-full h-5 w-5 flex items-center justify-center text-[10px] p-0.5 border border-white'>{wishProducts?.length}</p>
+                                            <p className='absolute -top-1 -right-1 bg-green-600 text-white rounded-full h-5 w-5 flex items-center justify-center text-[10px] p-0.5 border border-white'>{wishProducts?.length || 0}</p>
                                         </Link> :
                                         <Link href='/login' className='bg-white text-xl rounded-full p-1.5'>
                                             <CiHeart />

@@ -61,10 +61,10 @@ const AddToCartButton = ({ product }) => {
                 product?.price === product?.offerPrice ? '' :
                     <div className='absolute -right-5 md:-right-3 top-2 flex items-center justify-center'>
                         <Image src={discountSvg} height={100} width={100} className='h-12 md:h-16 relative' />
-                        <p className='absolute text-white text-[10px] md:text-xs text-center'>Flat <br /> {Math.round(((product?.price - product?.offerPrice) / product?.price) * 100)}% off</p>
+                        <p className='absolute text-white text-[10px] md:text-xs text-center font-bold'>TK <br /> {Math.round(((product?.price - product?.offerPrice) / product?.price) * 100)} Off</p>
                     </div>
             }
-            <div className='absolute top-20 right-5 opacity-0 group-hover:opacity-100 flex flex-col gap-y-2'>
+            <div className={`${product?.price === product?.offerPrice ? 'top-5' : 'top-20'} absolute right-5 opacity-0 group-hover:opacity-100 flex flex-col gap-y-2`}>
                 <button onClick={handleAddToWishlist} className='bg-primary p-2 rounded-full'> <FaRegHeart className='text-white md:text-lg' /></button>
                 <button onClick={handelAddToCart} className='bg-primary p-2 rounded-full'> <FiShoppingBag className='text-white md:text-lg' /></button>
             </div>
