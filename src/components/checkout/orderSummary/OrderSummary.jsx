@@ -3,6 +3,7 @@ import { AuthContext } from '@/context/authProvider/AuthProvider';
 import { StateContext } from '@/context/stateProvider/StateProvider';
 import { placeSingleOrderByEmail } from '@/lib/addToCartApi/addToCartApi';
 import { addCouponMutation } from '@/lib/couponApi/couponApi';
+import { useRouter } from 'next/navigation';
 import React, { useContext, useState } from 'react';
 import toast from 'react-hot-toast';
 
@@ -15,6 +16,7 @@ const OrderSummary = ({ cartData }) => {
     const [isLoading, setIsLoading] = useState(false);
     const [couponError, setCouponError] = useState(false);
     const [couponSuccess, setCouponSuccess] = useState(false);
+    const router = useRouter()
 
     const handlePayment = async () => {
         if (!payment) {
@@ -32,9 +34,11 @@ const OrderSummary = ({ cartData }) => {
                 setIsLoading(true)
                 if (modifiedData && user?.data?.user?.email) {
                     const response = await placeSingleOrderByEmail(user?.data?.user?.email, modifiedData)
+                    console.log(response)
                     if (response) {
                         toast.success('Order Successfull')
                         setCartSuccess(true)
+                        router.push('/account/order')
                     }
                 }
             } catch (error) {

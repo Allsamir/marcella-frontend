@@ -66,7 +66,7 @@ const AddToCartButton = ({ product }) => {
             }
             <div className={`${product?.price === product?.offerPrice ? 'top-5' : 'top-20'} absolute right-5 opacity-0 group-hover:opacity-100 flex flex-col gap-y-2`}>
                 <button onClick={handleAddToWishlist} className='bg-primary p-2 rounded-full'> <FaRegHeart className='text-white md:text-lg' /></button>
-                <button onClick={handelAddToCart} className='bg-primary p-2 rounded-full'> <FiShoppingBag className='text-white md:text-lg' /></button>
+                <button disabled={product?.status === 'OUT-OF-STOCK'} onClick={handelAddToCart} className={`${(product?.status === 'OUT-OF-STOCK') ? 'cursor-not-allowed bg-primary opacity-50' : 'bg-primary'} p-2 rounded-full`}> <FiShoppingBag className='text-white md:text-lg' /></button>
             </div>
         </div>
     );
