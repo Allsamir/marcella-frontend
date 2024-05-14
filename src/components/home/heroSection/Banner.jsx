@@ -36,7 +36,7 @@ const Banner = () => {
                         <Slider {...banneSettings}>
                             {
                                 bannerData?.data?.map(ban =>
-                                    <Link key={ban?._id} href={`/campaign-products/${ban?.slug}`}>
+                                    <Link key={ban?._id} href={ban?.url?.startsWith(' https') ? ban?.url : `/campaign-products/${ban?.slug}`}>
                                         <Image
                                             width={1200}
                                             height={420}

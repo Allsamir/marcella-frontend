@@ -77,8 +77,8 @@ const Footer = () => {
                             <FaInstagramSquare className='text-3xl text-[#222222] bg-[#6d6d6d] border border-white rounded cursor-pointer' />
                         </Link>
                     </div>
-                    <div>
                         <p className='text-white text-center text-sm'>{`© ${new Date().getFullYear()} Copyright Veendeshi All Rights Reserved.`}</p>
+                    <div>
                         <p className='text-white text-xs text-center md:text-end'>Developed By: <Link target='_blank'
                             href="https://www.bengalsoftware.com/" className='text-secondary hover:text-white'>Bengal
                             Software</Link></p>
