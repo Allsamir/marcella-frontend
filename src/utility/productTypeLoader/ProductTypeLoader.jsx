@@ -1,10 +1,10 @@
 import React from 'react';
 
-const LoadmoreLoader = () => {
+const ProductTypeLoader = () => {
     return (
         <div className='mt-6 grid grid-cols-2 md:grid-cols-4 xl:grid-cols-6 gap-2 md:gap-5'>
             {
-                Array(12).fill().map((_, idx) => (
+                Array(6).fill().map((_, idx) => (
                     <div key={idx}>
                         <div className='relative group'>
                             <div>
@@ -27,4 +27,4 @@ const LoadmoreLoader = () => {
     );
 };
 
-export default LoadmoreLoader;
+export default ProductTypeLoader;
