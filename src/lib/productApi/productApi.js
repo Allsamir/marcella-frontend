@@ -129,6 +129,8 @@ const addProductMutation = async (formData) => {
             throw new Error('Failed to fetch data');
         }
 
+        console.log(res);
+
         return res.json();
     } catch (error) {
         console.error('Error adding product:', error);
