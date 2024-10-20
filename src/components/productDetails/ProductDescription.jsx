@@ -8,6 +8,7 @@ import WishlistButtonAndShare from './WishlistButtonAndShare';
 import { StateContext } from '@/context/stateProvider/StateProvider';
 import { AuthContext } from '@/context/authProvider/AuthProvider';
 import { addToCartDataByEmail } from '@/lib/addToCartApi/addToCartApi';
+import { useRouter } from 'next/navigation'
 
 
 const ProductDescription = ({ product }) => {
@@ -18,7 +19,8 @@ const ProductDescription = ({ product }) => {
     const { name, categories, numReviews, totalRating, quantity, price, offerPrice, color, size, manufacturer, status } = product || {};
     const [sizePrice, setSizePrice] = useState(null)
     const [selectedColor, setSelectedColor] = useState(null);
-    const [selectedSize, setSelectedSize] = useState(null)
+    const [selectedSize, setSelectedSize] = useState(null);
+    const router = useRouter();
 
     const handleQtyIncrement = () => {
         const newQty = productQty + 1;
@@ -53,7 +55,9 @@ const ProductDescription = ({ product }) => {
                 size: selectedSize
             };
         } else {
-            toast.error('Please Signin Your Account')
+            toast.error('Please Signin Your Account');
+            router.push("/login")
+
         }
         try {
             setCartLoading(true)
