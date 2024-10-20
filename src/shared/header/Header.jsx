@@ -13,8 +13,7 @@ import { FaHeart } from 'react-icons/fa';
 import MobileSearchbar from '../mobileSearchbar/MobileSearchbar';
 import SearchBar from './SearchBar';
 import Image from 'next/image';
-import logo from '../../../public/assets/logo.png'
-
+import logo from '../../../public/assets/logo.png';
 const Header = () => {
     const [mobileNavOpen, setMobileNavOpen] = useState(false);
     const [openDrawer, setOpenDrawer] = useState(false);
@@ -33,7 +32,7 @@ const Header = () => {
                 console.error(error)
             }
         }
-        fetchData()
+        fetchData();
         if (wishlistSuccess) {
             fetchData();
             setWishlistSuccess(false)
@@ -64,13 +63,13 @@ const Header = () => {
                                     <Link href='/login' className={seller?.data?.user?.email || sellerLoginSuccess ? 'hidden' : 'flex items-center gap-2'} ><FiUser /> Account</Link>
                             }
                             {
-                                (seller?.data?.user?.email || sellerLoginSuccess) ?
-                                    <Link href='/seller' className='flex items-center gap-2' ><FiUser /> Dashboard</Link> : ''
+                                (seller?.data?.user?.email || sellerLoginSuccess) &&
+                                    <Link href='/seller' className='flex items-center gap-2' ><FiUser /> Dashboard</Link>
                             }
                             {
-                                (user?.data?.user?.email || seller?.data?.user?.email || sellerLoginSuccess || userLoginSuccess) ?
+                                (user?.data?.user?.email || seller?.data?.user?.email) ?
                                     <button onClick={handleLogout} className='flex items-center gap-2' >Logout</button> :
-                                    ''
+                                    <Link href={`/login`}>Login</Link>
                             }
                         </div>
                     </div>
