@@ -7,7 +7,6 @@ const LoginPage = () => {
   useEffect(() => {
     // Reload the page every time the component mounts
     const currentUrl = window.location.href;
-    console.log(currentUrl);
     // Use the history API to handle reload without triggering an infinite loop
     if (!currentUrl.includes('?reloaded=true')) {
       window.location.href = `${currentUrl}?reloaded=true`;
