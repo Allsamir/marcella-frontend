@@ -31,7 +31,7 @@ const ProductDetailsPage = async ({ params }) => {
     const { slug } = params || {};
     const data = await getSingleProduct(slug);
     const { images } = data?.result || {};
-
+    
     return (
         <div className='container mx-auto mb-10 mt-5'>
             <div className='mx-4 xl:mx-0'>
